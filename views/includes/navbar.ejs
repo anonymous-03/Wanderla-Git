@@ -1,0 +1,50 @@
+<style>
+  .search-btn{
+    background-color: red;
+    color: white;
+    
+  }
+   .nowrap-link {
+    white-space: nowrap;
+    font-weight: bold;
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-tertiary sticky-top border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <!-- Left Nav -->
+      <div class="navbar-nav me-auto order-md-0">
+        <a class="nav-link" href="/listings"><b>Explore</b></a>
+      </div>
+
+      <!-- Centered Search Bar -->
+      <div class="d-flex justify-content-center w-100 order-md-1 my-2 my-md-0">
+        <form class="d-flex w-50" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Destinations" aria-label="Search" />
+          <button class="btn search-btn" type="submit">Search</button>
+        </form>
+      </div>
+
+      <!-- Right Nav -->
+      <div class="navbar-nav ms-md-auto text-center order-md-2">
+        <a class="nav-link nowrap-link" href="/listings/new"><strong>Wanderla Your Home</strong></a>
+        <% if(!currUser) { %>
+          <a class="nav-link" href="/register"><i><b>Signup</b></i></a>
+          <a class="nav-link" href="/login"><i><b>Login</b></i></a>
+        <% } else { %>
+          <a class="nav-link" href="/logout"><i><b>LogOut</b></i></a>
+        <% } %>
+      </div>
+
+    </div>
+  </div>
+</nav>

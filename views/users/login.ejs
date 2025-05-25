@@ -1,0 +1,19 @@
+<%- layout("/layouts/boilerplate")-%>
+<form action="/login" method="POST" novalidate class="needs-validation">
+    <div class="signup-form-wrapper col-6 offset-3">
+        <h1>LogIn</h1>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" id="exampleFormControlInput1"
+                placeholder="atif123" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="text" name="password" class="form-control" id="exampleFormControlInput1"
+                placeholder="********" required>
+        </div>
+        <button type="submit" class="btn btn-success">LogIn</button>
+
+    </div>
+    </form>

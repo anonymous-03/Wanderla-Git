@@ -1,0 +1,89 @@
+<%- layout('/layouts/boilerplate')-%>
+
+<style></style>
+<body>
+    
+    <div class="filters">
+        <div class="filter">
+            <i class="fa-solid fa-snowflake"></i>
+            <p>Snow</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <p>Beaches</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-mountain-sun"></i>
+            <p>Mountains</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-fire"></i>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-sailboat"></i>
+            <p>Boating</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-city"></i>
+            <p>City</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-bed"></i>
+            <p>Dormitory</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-person-swimming"></i>
+            <p>Swimming Pool</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <p>Top Picks</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-hotel"></i>
+            <p>Resorts</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-place-of-worship"></i>
+            <p>Castle</p>
+        </div>
+        <div class="filter">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p>Near You</p>
+        </div>
+        <div class="form-check form-switch form-check-reverse">
+            <label class="form-check-label" for="switchCheckDefault">Display Prices After Taxes</label>
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+        </div>
+    </div>
+    
+
+    
+
+
+<div class="wrapper mb-1 mt-2">
+    <%for(let listing of listings){%>
+        
+        <div class="card" data-card-id="<%=listing._id%>">
+            
+                <img src="<%=listing.image.url%>" class="card-img-top card-img" alt="<%=listing.image.filename%>">
+                <div class="card-img-overlay"></div>
+          
+            <div class="card-body">
+              <p class="card-text">
+                    <%=listing.title%><br>
+                    &#8377;<%=listing.price.toLocaleString("en-IN")%>
+                    <i class="tax-forms">&nbsp;+18% taxes, </i>
+                    <i><%=listing.location%></i>
+                   
+              </p>
+            </div>
+        </div>
+    <%}%>
+</div>
+  
+    
+
+    <script src="/Js/script.js"></script>
+</body>

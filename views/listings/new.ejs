@@ -1,0 +1,43 @@
+<%- layout('/layouts/boilerplate')-%>
+<body>
+    
+   
+    <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data" >
+        
+        <div class="new-form-wrapper">
+            <br>
+            <h3>Create New Listing</h3>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label" >Title</label>
+                <input type="text" name="title" class="form-control"  id="exampleFormControlInput1" placeholder="The best suited for your property" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label" >Description</label>
+                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Describe the best about your palace" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput5" class="form-label">Price</label>
+                <input type="text" class="form-control" name="price" id="exampleFormControlInput5" placeholder="price" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Location</label>
+                <input type="text" class="form-control" name="location" id="exampleFormControlInput2" placeholder="Location" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput3" class="form-label">Country</label>
+                <input type="text" class="form-control" name="country" id="exampleFormControlInput3" placeholder="country" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput4" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" name="listingimage" id="exampleFormControlInput4" placeholder="link">
+            </div>
+        </div>
+      <div class="new-btn">
+      <button class="btn btn-primary btn-md">Add listing</button>
+   
+      </div>
+      <br>
+      </form>
+      <!-- <script src="/Js/script2.js"></script> -->
+   
+</body>

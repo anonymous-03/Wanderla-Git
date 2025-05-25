@@ -1,0 +1,50 @@
+<%- layout('/layouts/boilerplate')-%>
+<script>
+  let mapToken = "<%= process.env.MAP_TOKEN %>";
+  let listing = <%- JSON.stringify(listing) %>;
+  
+</script>
+
+<body>
+    <div class="show-wrapper mt-3 mb-3">
+        <h3><%=listing.title%></h3>
+        <div class="card-show">
+            <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="<%=listing.image.filename%>">
+            <div class="card-body">
+            <!-- <h5 class="card-title"><%#listing.title%></h5> -->
+            <p class="card-text"><h4>&#8377; <%=listing.price.toLocaleString("en-IN")%> <i><%=listing.location%>, <%=listing.country%></i></h4>
+            <%=listing.description%></p>
+            </div>
+            <div class="show-btns">
+                <a href="/listings/<%=listing._id%>/edit" class="btn btn-primary show-btn">Edit</a>
+                <form method="post" action="/listings/<%=listing._id%>?_method=DELETE">
+                    <button class="btn btn-dark">Delete</button>
+                </form>
+                <a href="/listings/<%=listing._id%>/reviews" class="btn btn-primary show-btn">Add Review</a>
+            </div>
+            <%if(listing.reviews.length>0){%>
+            <div class="review-wrapper">
+            <%for(let review of listing.reviews) {%> 
+                <div class="card review-card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=review.owner.username%></h5>
+                      <p class="card-text"><%=review.comment%></p>
+                      <p class="starability-result" data-rating=<%=review.rating%>></p>
+                      <a href="/listings/<%=listing._id%>/reviews/<%=review._id%>/edit" class="btn btn-primary">Edit</a>
+                      <form method="POST" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" style="display:inline;">
+                        <button class="btn btn-danger">Delete</button>
+                      </form>
+                    </div>
+                  </div>
+                
+            <% }%>
+            </div>
+            <%}%>
+            <br>
+            <hr>
+            <div id="map"></div>
+    </div>
+</div>
+    
+</body>
+<script src="/Js/map.js"></script>

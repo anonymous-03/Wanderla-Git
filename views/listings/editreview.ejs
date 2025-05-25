@@ -1,0 +1,44 @@
+<%- layout('/layouts/boilerplate')-%>
+
+    <body>
+        <div class="row col-md-8 offset-2">
+            <form method="post" action="/listings/<%=listingId%>/reviews/<%=review._id%>?_method=PATCH" novalidate class="needs-validation">
+                <br><br>
+                <h3>Edit Review</h3>
+                <div class="new-form-wrapper">
+                    <br>
+                    <h3>Edit Review</h3>
+                    
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+                        <textarea class="form-control" name="comments" id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Describe the best about your palace" required><%=review.comment%></textarea>
+                    </div>
+                     <div class="form-label mb-3">
+                        <label for="customRange1" class="form-label">Ratings 1 to 5</label>
+                        <fieldset class="starability-slot">
+                        <legend>First rating:</legend>
+                        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+                        <input type="radio" id="first-rate1" name="ratings" value=<%=review.rating%>/>
+                        <label for="first-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="first-rate2" name="ratings" value=<%=review.rating%> />
+                        <label for="first-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="first-rate3" name="ratings" value=<%=review.rating%> />
+                        <label for="first-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="first-rate4" name="ratings" value=<%=review.rating%> />
+                        <label for="first-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="first-rate5" name="ratings" value=<%=review.rating%> />
+                        <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                </div>
+                <div class="new-btn">
+                    <button class="btn btn-primary btn-md">Edit Review</button>
+
+                </div>
+        </div>
+
+
+
+        </form>
+    </body>
